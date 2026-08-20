@@ -1,0 +1,39 @@
+{
+  "events": [
+    {
+      "id": "evt-001",
+      "title": "Waterfront Night Market",
+      "location": { "lat": 43.6385, "lng": -79.3816, "address": "Queens Quay, Toronto" },
+      "startTime": "2026-08-22T19:00:00Z",
+      "imageURL": "https://picsum.photos/seed/evt-001/600/400"
+    },
+    {
+      "id": "evt-002",
+      "title": "Distillery District Jazz Night",
+      "location": { "lat": 43.6503, "lng": -79.3592, "address": "55 Mill St, Toronto" },
+      "startTime": "2026-08-23T20:00:00Z",
+      "imageURL": "https://picsum.photos/seed/evt-002/600/400"
+    },
+    {
+      "id": "evt-003",
+      "title": "Trinity Bellwoods Farmers Market",
+      "location": { "lat": 43.6474, "lng": -79.4133, "address": "790 Queen St W, Toronto" },
+      "startTime": "2026-08-24T09:00:00Z",
+      "imageURL": "https://picsum.photos/seed/evt-003/600/400"
+    },
+    {
+      "id": "evt-004",
+      "title": "Harbourfront Outdoor Film Screening",
+      "location": { "lat": 43.6389, "lng": -79.3775, "address": "235 Queens Quay W, Toronto" },
+      "startTime": "2026-08-25T21:00:00Z",
+      "imageURL": "https://picsum.photos/seed/evt-004/600/400"
+    },
+    {
+      "id": "evt-005",
+      "title": "Kensington Market Street Fair",
+      "location": { "lat": 43.6547, "lng": -79.4005, "address": "Kensington Ave, Toronto" },
+      "startTime": "2026-08-26T11:00:00Z",
+      "imageURL": "https://picsum.photos/seed/evt-005/600/400"
+    }
+  ]
+}

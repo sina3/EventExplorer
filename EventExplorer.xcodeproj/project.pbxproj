@@ -45,6 +45,11 @@
 			path = EventExplorerUITests;
 			sourceTree = "<group>";
 		};
+		78E595663037BDE3000E1140 /* mock-api */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "mock-api";
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +74,7 @@
 		78E595333037BBAA000E1140 = {
 			isa = PBXGroup;
 			children = (
+				78E595663037BDE3000E1140 /* mock-api */,
 				78E5953E3037BBAA000E1140 /* EventExplorer */,
 				78E5954E3037BBAC000E1140 /* EventExplorerTests */,
 				78E595583037BBAC000E1140 /* EventExplorerUITests */,
@@ -101,6 +107,7 @@
 			);
 			fileSystemSynchronizedGroups = (
 				78E5953E3037BBAA000E1140 /* EventExplorer */,
+				78E595663037BDE3000E1140 /* mock-api */,
 			);
 			name = EventExplorer;
 			productName = EventExplorer;
@@ -379,6 +386,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -411,6 +419,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

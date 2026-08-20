@@ -1,0 +1,25 @@
+# Xcode
+*.xcuserstate
+*.xcuserdatad/
+*.xcworkspace/xcuserdata/
+*.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings
+xcuserdata/
+DerivedData/
+.build/
+*.ipa
+
+# SwiftPM
+.swiftpm/
+
+# Node (mock API)
+/mock-api/node_modules
+npm-debug.log
+*.log
+
+# Env
+.env
+.env.local
+
+# macOS
+.DS_Store
+
