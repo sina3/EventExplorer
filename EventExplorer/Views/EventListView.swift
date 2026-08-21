@@ -21,11 +21,27 @@ struct EventListView: View {
 
     var body: some View {
         NavigationStack {
-            content
-                .navigationTitle("Events")
+            VStack {
+                if vm.isOffline {
+                    offlineBanner
+                }
+                content
+            }
+            .navigationTitle("Events")
+            .toolbarBackground(.visible, for: .navigationBar)
         }
         .task { await vm.load() }
         .onAppear { locationProvider.requestPermission() }
+    }
+
+    private var offlineBanner: some View {
+        Text("You're offline")
+            .font(.subheadline)
+            .foregroundStyle(.white)
+            .frame(maxWidth: .infinity)
+            .frame(height: 25)
+            .padding(.vertical, 6)
+            .background(Color.red)
     }
 
     @ViewBuilder

@@ -1,0 +1,29 @@
+//
+//  NetworkMonitor.swift
+//  EventExplorer
+//
+//  Created by Sina Rezazadeh on 2026-08-21.
+//
+
+import Combine
+import Network
+
+final class NetworkMonitor: ObservableObject {
+    @Published private(set) var isConnected: Bool = true
+
+    private let monitor = NWPathMonitor()
+    private let queue = DispatchQueue(label: "NetworkMonitor")
+
+    init() {
+        monitor.pathUpdateHandler = { [weak self] path in
+            DispatchQueue.main.async {
+                self?.isConnected = path.status == .satisfied
+            }
+        }
+        monitor.start(queue: queue)
+    }
+
+    deinit {
+        monitor.cancel()
+    }
+}
