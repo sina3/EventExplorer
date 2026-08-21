@@ -11,12 +11,14 @@ import SwiftData
 struct EventDetailView: View {
     let event: Event
     private let store: PersistenceStore
+    @ObservedObject private var locationProvider: LocationProvider
 
     @State private var isBookmarked: Bool
 
-    init(event: Event, store: PersistenceStore) {
+    init(event: Event, store: PersistenceStore, locationProvider: LocationProvider) {
         self.event = event
         self.store = store
+        self.locationProvider = locationProvider
         _isBookmarked = State(initialValue: store.isBookmarked(eventId: event.id))
     }
 
@@ -44,6 +46,12 @@ struct EventDetailView: View {
                 Text(event.startTime.formatted(date: .abbreviated, time: .shortened))
                     .font(.subheadline)
                     .foregroundStyle(.secondary)
+
+                if let distance = Distance.distanceString(from: locationProvider.currentLocation, to: event.location) {
+                    Text(distance)
+                        .font(.subheadline)
+                        .foregroundStyle(.secondary)
+                }
             }
             .padding()
         }
@@ -76,7 +84,8 @@ struct EventDetailView: View {
                 startTime: .now,
                 imageURL: URL(string: "https://example.com/image.jpg")!
             ),
-            store: PersistenceStore(modelContainer: container)
+            store: PersistenceStore(modelContainer: container),
+            locationProvider: LocationProvider()
         )
     }
 }

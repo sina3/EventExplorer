@@ -11,10 +11,12 @@ import SwiftData
 struct EventListView: View {
     @State private var vm: EventsListViewModel
     private let store: PersistenceStore
+    @StateObject private var locationProvider: LocationProvider
 
-    init(vm: EventsListViewModel, store: PersistenceStore) {
+    init(vm: EventsListViewModel, store: PersistenceStore, locationProvider: LocationProvider = LocationProvider()) {
         _vm = State(initialValue: vm)
         self.store = store
+        _locationProvider = StateObject(wrappedValue: locationProvider)
     }
 
     var body: some View {
@@ -23,6 +25,7 @@ struct EventListView: View {
                 .navigationTitle("Events")
         }
         .task { await vm.load() }
+        .onAppear { locationProvider.requestPermission() }
     }
 
     @ViewBuilder
@@ -41,7 +44,7 @@ struct EventListView: View {
         case .loaded(let events):
             List(events) { event in
                 NavigationLink {
-                    EventDetailView(event: event, store: store)
+                    EventDetailView(event: event, store: store, locationProvider: locationProvider)
                 } label: {
                     row(for: event)
                 }
@@ -71,6 +74,11 @@ struct EventListView: View {
                 Text(event.startTime.formatted(date: .abbreviated, time: .shortened))
                     .font(.caption)
                     .foregroundStyle(.secondary)
+                if let distance = Distance.distanceString(from: locationProvider.currentLocation, to: event.location) {
+                    Text(distance)
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                }
             }
             Spacer()
             if vm.bookmarkedIds.contains(event.id) {
