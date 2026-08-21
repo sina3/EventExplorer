@@ -7,6 +7,7 @@
 
 import UIKit
 
+// This cache only lives in memory, it gets cleared when the app is closed.
 actor ImageCache {
     static let shared = ImageCache()
 

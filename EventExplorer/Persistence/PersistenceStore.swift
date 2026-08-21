@@ -8,6 +8,8 @@
 import Foundation
 import SwiftData
 
+// This class creates its own ModelContext instead of reading it from @Environment,
+// so we can make one and test it without needing a SwiftUI view.
 @MainActor
 final class PersistenceStore {
     private let modelContext: ModelContext

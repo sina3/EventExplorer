@@ -6,15 +6,12 @@
 	objectVersion = 110;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		78E5A24F3037FE11000E1140 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 78E5A24E3037FE11000E1140 /* README.md */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		78E5954C3037BBAC000E1140 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 78E595343037BBAA000E1140 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 78E5953B3037BBAA000E1140;
-			remoteInfo = EventExplorer;
-		};
-		78E595563037BBAC000E1140 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 78E595343037BBAA000E1140 /* Project object */;
 			proxyType = 1;
@@ -26,7 +23,7 @@
 /* Begin PBXFileReference section */
 		78E5953C3037BBAA000E1140 /* EventExplorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EventExplorer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78E5954B3037BBAC000E1140 /* EventExplorerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EventExplorerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		78E595553037BBAC000E1140 /* EventExplorerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EventExplorerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		78E5A24E3037FE11000E1140 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -38,11 +35,6 @@
 		78E5954E3037BBAC000E1140 /* EventExplorerTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = EventExplorerTests;
-			sourceTree = "<group>";
-		};
-		78E595583037BBAC000E1140 /* EventExplorerUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = EventExplorerUITests;
 			sourceTree = "<group>";
 		};
 		78E595663037BDE3000E1140 /* mock-api */ = {
@@ -63,11 +55,6 @@
 			files = (
 			);
 		};
-		78E595523037BBAC000E1140 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			files = (
-			);
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -77,7 +64,7 @@
 				78E595663037BDE3000E1140 /* mock-api */,
 				78E5953E3037BBAA000E1140 /* EventExplorer */,
 				78E5954E3037BBAC000E1140 /* EventExplorerTests */,
-				78E595583037BBAC000E1140 /* EventExplorerUITests */,
+				78E5A24E3037FE11000E1140 /* README.md */,
 				78E5953D3037BBAA000E1140 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -87,7 +74,6 @@
 			children = (
 				78E5953C3037BBAA000E1140 /* EventExplorer.app */,
 				78E5954B3037BBAC000E1140 /* EventExplorerTests.xctest */,
-				78E595553037BBAC000E1140 /* EventExplorerUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -134,27 +120,6 @@
 			productReference = 78E5954B3037BBAC000E1140 /* EventExplorerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		78E595543037BBAC000E1140 /* EventExplorerUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 78E595633037BBAC000E1140 /* Build configuration list for PBXNativeTarget "EventExplorerUITests" */;
-			buildPhases = (
-				78E595513037BBAC000E1140 /* Sources */,
-				78E595523037BBAC000E1140 /* Frameworks */,
-				78E595533037BBAC000E1140 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				78E595573037BBAC000E1140 /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				78E595583037BBAC000E1140 /* EventExplorerUITests */,
-			);
-			name = EventExplorerUITests;
-			productName = EventExplorerUITests;
-			productReference = 78E595553037BBAC000E1140 /* EventExplorerUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -169,10 +134,6 @@
 						CreatedOnToolsVersion = 27.0;
 					};
 					78E5954A3037BBAC000E1140 = {
-						CreatedOnToolsVersion = 27.0;
-						TestTargetID = 78E5953B3037BBAA000E1140;
-					};
-					78E595543037BBAC000E1140 = {
 						CreatedOnToolsVersion = 27.0;
 						TestTargetID = 78E5953B3037BBAA000E1140;
 					};
@@ -194,7 +155,6 @@
 			targets = (
 				78E5953B3037BBAA000E1140 /* EventExplorer */,
 				78E5954A3037BBAC000E1140 /* EventExplorerTests */,
-				78E595543037BBAC000E1140 /* EventExplorerUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -203,14 +163,10 @@
 		78E5953A3037BBAA000E1140 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			files = (
+				78E5A24F3037FE11000E1140 /* README.md in Resources */,
 			);
 		};
 		78E595493037BBAC000E1140 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			files = (
-			);
-		};
-		78E595533037BBAC000E1140 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			files = (
 			);
@@ -228,11 +184,6 @@
 			files = (
 			);
 		};
-		78E595513037BBAC000E1140 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			files = (
-			);
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -240,11 +191,6 @@
 			isa = PBXTargetDependency;
 			target = 78E5953B3037BBAA000E1140 /* EventExplorer */;
 			targetProxy = 78E5954C3037BBAC000E1140 /* PBXContainerItemProxy */;
-		};
-		78E595573037BBAC000E1140 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 78E5953B3037BBAA000E1140 /* EventExplorer */;
-			targetProxy = 78E595563037BBAC000E1140 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -446,7 +392,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3358LFT65J;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 27.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = dev.sinareza.EventExplorerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -468,7 +414,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3358LFT65J;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 27.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = dev.sinareza.EventExplorerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -479,46 +425,6 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EventExplorer.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/EventExplorer";
-			};
-			name = Release;
-		};
-		78E595643037BBAC000E1140 /* Debug configuration for PBXNativeTarget "EventExplorerUITests" */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 3358LFT65J;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = dev.sinareza.EventExplorerUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				STRING_CATALOG_GENERATE_SYMBOLS = NO;
-				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = EventExplorer;
-			};
-			name = Debug;
-		};
-		78E595653037BBAC000E1140 /* Release configuration for PBXNativeTarget "EventExplorerUITests" */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 3358LFT65J;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = dev.sinareza.EventExplorerUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				STRING_CATALOG_GENERATE_SYMBOLS = NO;
-				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = EventExplorer;
 			};
 			name = Release;
 		};
@@ -546,14 +452,6 @@
 			buildConfigurations = (
 				78E595613037BBAC000E1140 /* Debug configuration for PBXNativeTarget "EventExplorerTests" */,
 				78E595623037BBAC000E1140 /* Release configuration for PBXNativeTarget "EventExplorerTests" */,
-			);
-			defaultConfigurationName = Release;
-		};
-		78E595633037BBAC000E1140 /* Build configuration list for PBXNativeTarget "EventExplorerUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				78E595643037BBAC000E1140 /* Debug configuration for PBXNativeTarget "EventExplorerUITests" */,
-				78E595653037BBAC000E1140 /* Release configuration for PBXNativeTarget "EventExplorerUITests" */,
 			);
 			defaultConfigurationName = Release;
 		};

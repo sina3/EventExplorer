@@ -8,6 +8,8 @@
 import CoreLocation
 import Combine
 
+// We use ObservableObject here and not the new @Observable macro, because this class
+// needs to be NSObject for CLLocationManagerDelegate, and the view holds it with @StateObject.
 final class LocationProvider: NSObject, ObservableObject, CLLocationManagerDelegate {
     @Published private(set) var authorizationStatus: CLAuthorizationStatus
     @Published private(set) var currentLocation: CLLocation?
