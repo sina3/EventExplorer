@@ -28,7 +28,7 @@ struct EventListView: View {
                 content
             }
             .navigationTitle("Events")
-            .toolbarBackground(.visible, for: .navigationBar)
+            .toolbarBackgroundVisibility(.visible, for: .navigationBar)
         }
         .task { await vm.load() }
         .onAppear { locationProvider.requestPermission() }
@@ -41,7 +41,7 @@ struct EventListView: View {
             .frame(maxWidth: .infinity)
             .frame(height: 25)
             .padding(.vertical, 6)
-            .background(Color.red)
+            .background(Color.red, ignoresSafeAreaEdges: [])
     }
 
     @ViewBuilder
