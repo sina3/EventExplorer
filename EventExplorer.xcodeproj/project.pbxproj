@@ -107,7 +107,6 @@
 			);
 			fileSystemSynchronizedGroups = (
 				78E5953E3037BBAA000E1140 /* EventExplorer */,
-				78E595663037BDE3000E1140 /* mock-api */,
 			);
 			name = EventExplorer;
 			productName = EventExplorer;
