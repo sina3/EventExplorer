@@ -1,6 +1,6 @@
 # EventExplorer
 
-An iOS app (SwiftUI + MVVM) that shows a list of nearby events, backed by a mock REST API. Supports bookmarking events, caches images, and shows distance to each event. The backend is a local `json-server` mock.
+An iOS app (SwiftUI + MVVM) that shows a list of nearby events, backed by a mock REST API. Supports bookmarking events, caches images, shows distance to each event, and can open an event's location in Apple Maps. The backend is a local `json-server` mock.
 
 ## Running the mock API
 

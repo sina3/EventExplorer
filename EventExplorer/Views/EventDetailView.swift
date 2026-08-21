@@ -52,6 +52,13 @@ struct EventDetailView: View {
                         .font(.subheadline)
                         .foregroundStyle(.secondary)
                 }
+
+                Button {
+                    Maps.openInMaps(event.location, title: event.title)
+                } label: {
+                    Label("Open in Maps", systemImage: "map")
+                }
+                .buttonStyle(.bordered)
             }
             .padding()
         }
