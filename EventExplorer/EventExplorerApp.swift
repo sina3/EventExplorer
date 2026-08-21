@@ -25,7 +25,11 @@ struct EventExplorerApp: App {
 
     var body: some Scene {
         WindowGroup {
-            EventListView()
+            let store = PersistenceStore(modelContainer: sharedModelContainer)
+            EventListView(
+                vm: EventsListViewModel(service: EventsAPIClient(), store: store),
+                store: store
+            )
         }
         .modelContainer(sharedModelContainer)
     }

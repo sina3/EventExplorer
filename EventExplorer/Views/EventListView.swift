@@ -6,17 +6,23 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct EventListView: View {
     @State private var vm: EventsListViewModel
+    private let store: PersistenceStore
 
-    init(vm: EventsListViewModel = EventsListViewModel(service: EventsAPIClient())) {
+    init(vm: EventsListViewModel, store: PersistenceStore) {
         _vm = State(initialValue: vm)
+        self.store = store
     }
 
     var body: some View {
-        content
-            .task { await vm.load() }
+        NavigationStack {
+            content
+                .navigationTitle("Events")
+        }
+        .task { await vm.load() }
     }
 
     @ViewBuilder
@@ -34,21 +40,45 @@ struct EventListView: View {
             }
         case .loaded(let events):
             List(events) { event in
-                VStack(alignment: .leading, spacing: 4) {
-                    Text(event.title)
-                        .font(.headline)
-                    Text(event.location.address)
-                        .font(.subheadline)
-                        .foregroundStyle(.secondary)
-                    Text(event.startTime.formatted(date: .abbreviated, time: .shortened))
-                        .font(.caption)
-                        .foregroundStyle(.secondary)
+                NavigationLink {
+                    EventDetailView(event: event, store: store)
+                } label: {
+                    row(for: event)
                 }
+            }
+            .onAppear { vm.refreshBookmarks() }
+        }
+    }
+
+    private func row(for event: Event) -> some View {
+        HStack {
+            VStack(alignment: .leading, spacing: 4) {
+                Text(event.title)
+                    .font(.headline)
+                Text(event.location.address)
+                    .font(.subheadline)
+                    .foregroundStyle(.secondary)
+                Text(event.startTime.formatted(date: .abbreviated, time: .shortened))
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+            }
+            Spacer()
+            if vm.bookmarkedIds.contains(event.id) {
+                Image(systemName: "bookmark.fill")
+                    .foregroundStyle(.tint)
             }
         }
     }
 }
 
 #Preview {
-    EventListView(vm: EventsListViewModel(service: MockEventsService()))
+    let container = try! ModelContainer(
+        for: BookmarkEntity.self,
+        configurations: ModelConfiguration(isStoredInMemoryOnly: true)
+    )
+    let store = PersistenceStore(modelContainer: container)
+    return EventListView(
+        vm: EventsListViewModel(service: MockEventsService(), store: store),
+        store: store
+    )
 }
