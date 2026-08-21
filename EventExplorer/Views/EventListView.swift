@@ -51,7 +51,17 @@ struct EventListView: View {
     }
 
     private func row(for event: Event) -> some View {
-        HStack {
+        HStack(spacing: 12) {
+            CachedAsyncImage(url: event.imageURL) { image in
+                image
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+            } placeholder: {
+                Color.secondary.opacity(0.2)
+            }
+            .frame(width: 56, height: 56)
+            .clipShape(RoundedRectangle(cornerRadius: 8))
+
             VStack(alignment: .leading, spacing: 4) {
                 Text(event.title)
                     .font(.headline)

@@ -23,7 +23,7 @@ struct EventDetailView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 12) {
-                AsyncImage(url: event.imageURL) { image in
+                CachedAsyncImage(url: event.imageURL) { image in
                     image
                         .resizable()
                         .aspectRatio(contentMode: .fill)
